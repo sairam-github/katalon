@@ -18,16 +18,25 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl('https://www.ptc.com/')
 
-WebUI.maximizeWindow();
+WebUI.maximizeWindow()
 
-String title = WebUI.getWindowTitle();
+String title = WebUI.getWindowTitle()
+
+// WebUI.delay(5)
+
+WebUI.waitForElementVisible(findTestObject('Object Repository/Ptc_home/Page_Digital Transformation Solutions to Unlock the Value of IIoT  PTC/a_Blogs'), 
+    5)
 
 WebUI.click(findTestObject('Object Repository/Ptc_home/Page_Digital Transformation Solutions to Unlock the Value of IIoT  PTC/a_Blogs'))
 
+WebUI.waitForElementVisible(findTestObject('Object Repository/Ptc_home/Page_PTC Blog Embrace Industrial Digital Transformation  PTC/img_Blogs_logo'), 
+    5)
+
 WebUI.click(findTestObject('Object Repository/Ptc_home/Page_PTC Blog Embrace Industrial Digital Transformation  PTC/img_Blogs_logo'))
 
-String expectedTitle = WebUI.getWindowTitle();
+String expectedTitle = WebUI.getWindowTitle()
 
 assert expectedTitle == title
 
 WebUI.closeBrowser()
+
